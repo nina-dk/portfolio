@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+import type { MarkdownInstance } from 'astro';
+
+interface PageFrontmatter {
+  title: string;
+  description: string;
+}
+
+const page = Object.values(
+  import.meta.glob('../../content/el/home.md', { eager: true }),
+)[0] as MarkdownInstance<PageFrontmatter>;
+---
+
+<BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={page.frontmatter.description}>
+  <article>
+    <h2>{page.frontmatter.title}</h2>
+    <h2>{page.frontmatter.description}</h2>
+    <page.Content />
+  </article>
+</BaseLayout>

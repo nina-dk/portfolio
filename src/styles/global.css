@@ -1,0 +1,105 @@
+/* @import "tailwindcss"; */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+html {
+  background-color: #f1f5f9;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url('../assets/background.svg');
+  background-size: cover;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+a {
+  color: #190830;
+}
+
+a:hover {
+  color:#551ca0; 
+}
+
+/* nav styles */
+
+.menu {
+  background-color: inherit;
+  border: 1px outset;
+  border-radius: 15px;
+  padding: 4px 8px 2px 7px;
+}
+
+.menu:active {
+  border: 1px inset;
+}
+
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #E7DBF8;
+}
+
+:has(.menu[aria-expanded='true']) .nav-links {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    background: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .nav-links a {
+    padding: 0 20px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: inherit;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+/* footer styles */
+
+footer {
+  margin-top: 2rem;
+}

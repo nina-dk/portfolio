@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+import type { MDXInstance } from 'astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+interface PageFrontmatter {
+  title: string;
+  description: string;
+}
+
+const { frontmatter, Content } = Object.values(
+  import.meta.glob('../content/en/home.mdx', { eager: true }),
+)[0] as MDXInstance<PageFrontmatter>;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Antonina Kallinteri" lang="en" description={frontmatter.title}>
+  <section>
+    <h1>{frontmatter.title}</h1>
+    <h2>{frontmatter.description}</h2>
+    <Content />
+  </section>
+</BaseLayout>
