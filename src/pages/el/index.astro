@@ -8,15 +8,19 @@ interface PageFrontmatter {
   description: string;
 }
 
-const page = Object.values(
-  import.meta.glob('../../content/el/home.md', { eager: true }),
+const { frontmatter, Content } = Object.values(
+  import.meta.glob('../../content/el/home.mdx', { eager: true }),
 )[0] as MarkdownInstance<PageFrontmatter>;
 ---
 
-<BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={page.frontmatter.description}>
-  <article>
-    <h2>{page.frontmatter.title}</h2>
-    <h2>{page.frontmatter.description}</h2>
-    <page.Content />
-  </article>
+<BaseLayout
+  title="Αντωνίνα Καλλιντέρη"
+  lang="el"
+  description={frontmatter.title}
+>
+  <section class="prose max-w-full m-2">
+    <h2>{frontmatter.title}</h2>
+    <h2>{frontmatter.description}</h2>
+    <Content />
+  </section>
 </BaseLayout>

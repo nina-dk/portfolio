@@ -14,7 +14,7 @@ const { frontmatter, Content } = Object.values(
 ---
 
 <BaseLayout title="Antonina Kallinteri" lang="en" description={frontmatter.title}>
-  <section>
+  <section class="prose max-w-full m-2">
     <h1>{frontmatter.title}</h1>
     <h2>{frontmatter.description}</h2>
     <Content />

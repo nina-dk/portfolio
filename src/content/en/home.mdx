@@ -3,43 +3,10 @@ title: "Antonina Kallinteri"
 description: "Full-stack Engineer - Passionate about building efficient, user-centered applications with an impact."
 ---
 
-import ContactLink from '../../components/ContactLink.svelte';
+import AboutSection from '../../components/AboutSection.astro';
+import ProjectsSection from '../../components/ProjectsSection.astro';
+import ContactForm from '../../components/ContactForm.svelte';
 
-## About me
-
-### Who I am
-
-I'm a full-stack engineer with 2+ years of experience with a strong interest in modern web technologies and building clean, user-friendly applications. I enjoy working on projects end-to-end and continuously improving my skills through hands-on experience, feedback, and collaboration.
-
-### Who I strive to be in 5 years
-
-In the next five years, I see myself growing into a well-rounded developer who contributes confidently to real-world projects, has a solid understanding of the full-stack development lifecycle, and continues to learn and adapt to new technologies.
-
-### What stuck with me from our interview
-
-What I enjoyed most from our interview was the focus on teamwork, continuous improvement, and the connection between development and real business needs. It reinforced my interest in working in an environment where learning and collaboration are valued.
-
-<ContactLink />
-
-## Projects
-
-- Neighbourhood — TypeScript, Express, Prisma ORM, React
-Live App | GitHub | Case study
-Collaborative web platform connecting “neighbours” — whether local or virtual — to offer and
-request help.
-I initiated the concept and worked with fellow Launch School graduates to bring it to life,
-designing the database schema and backend logic using TypeScript, Express, and Prisma
-ORM.
-React was used on the frontend to deliver a clean, intuitive interface.
-This project emphasized teamwork across time zones, structured workflow via GitHub issues,
-and clean architecture between client and server.
-- Todo List Web App — Node.js, Express, Pug, PostgreSQL
-GitHub
-Structured task management app developed as part of the Launch School curriculum,
-focusing on SQL persistence and backend organization.
-- Phonebook Web App — React, Express, MongoDB
-Live App | GitHub
-Simple CRUD phonebook application, connected with MongoDB Atlas.
-Weather Web App — Node.js, Express
-Simple web application to display live weather data consuming the OpenWeather API.
-- Portfolio website — Astro, Svelte
+<AboutSection />
+<ProjectsSection lang="en" />
+<ContactForm client:visible />

@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import Project from './Project.svelte';
+
+const projects = await getCollection('enProjects');
+const renderedProjects = await Promise.all(projects.map(p => render(p)));
+---
+
+<h2>Projects</h2>
+<div id="projects" class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+  {
+    renderedProjects.map(({ remarkPluginFrontmatter, Content }) => (
+      <Project
+        title={remarkPluginFrontmatter.title}
+        tech={remarkPluginFrontmatter.tech}
+      >
+        <Content />
+      </Project>
+    ))
+  }
+</div>

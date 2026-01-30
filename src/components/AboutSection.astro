@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import InfoCard from './InfoCard.svelte';
+import ContactLink from './ContactLink.svelte';
+
+const sections = await getCollection('enBio');
+const renderedSections = await Promise.all(sections.map(s => render(s)));
+---
+
+<h2>About me</h2>
+<div class="grid gap-6 lg:grid-cols-3">
+  {
+    renderedSections.map(({ remarkPluginFrontmatter, Content }) => (
+      <InfoCard title={remarkPluginFrontmatter.title}>
+        <Content />
+      </InfoCard>
+    ))
+  }
+  <div class="md:row-start-2 md:col-start-2 md:text-center md:self-center lg:text-start mt-6 text-end">
+    <a
+      href="#contact"
+      class="border-2 rounded-lg pl-6 pr-6 pt-3 pb-3 no-underline transition delay-90 ease-in-out hover:backdrop-contrast-115"
+      >Let's talk!</a
+    >
+  </div>
+</div>

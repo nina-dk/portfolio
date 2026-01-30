@@ -2,11 +2,12 @@
 const { platform, username } = $props();
 </script>
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a class="self-center" href={`https://www.${platform}.com/${username}`}>
+  <img class="w-8" alt="{platform} icon" src="/{platform}_icon.png" />
+</a>
 
 <style>
-  a {
-    text-decoration: none;
-    text-transform: capitalize;
+  img[alt='github icon'] {
+    max-width: 1.55em;
   }
 </style>
