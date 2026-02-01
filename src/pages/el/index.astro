@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TitleSection from '../../components/TitleSection.astro';
 import '../../styles/global.css';
 import type { MDXInstance } from 'astro';
 
@@ -13,21 +14,9 @@ const { frontmatter, Content } = Object.values(
 )[0] as MDXInstance<PageFrontmatter>;
 ---
 
-<BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={frontmatter.title}>
+<BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={frontmatter.description}>
   <section class="prose max-w-full m-2">
-    <h1 class="md:text-6xl">{frontmatter.title}</h1>
-    <div class="flex flex-wrap items-center md:mt-6 gap-7 pr-6 pl-6 pt-3 pb-3">
-      <h2 class="md:text-3xl font-normal md:flex-3">
-        {frontmatter.description}
-      </h2>
-      <div class="md:flex-2 mt-7 ml-auto md:ml-0 text-center hover:animate-wiggle">
-        <a
-          href="#contact"
-          class="rounded-md shadow-xl pl-8 pr-8 pt-3 pb-3 md:pl-15 md:pr-15 md:pt-7 md:pb-7 no-underline bg-purple-200 animate-purple-gradient active:border-6 border-purple-900"
-          >Let's talk!</a
-        >
-      </div>
-    </div>
+    <TitleSection title={frontmatter.title} description={frontmatter.description} />
     <Content />
   </section>
 </BaseLayout>

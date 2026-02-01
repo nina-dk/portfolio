@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.svelte';
+import TitleSection from '../components/TitleSection.astro';
 import Footer from '../components/Footer.svelte';
 import '../styles/global.css';
 
@@ -17,7 +18,7 @@ const { lang, title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="font-mono bg-[url('../assets/background.svg')] bg-cover p-6">
+  <body class="font-mono bg-[url('../assets/background.svg')] bg-cover p-3 md:p-6">
     <Header client:only lang={lang} />
     <slot />
     <Footer />

@@ -44,7 +44,7 @@
 </script>
 
 <article
-  class="{orderClass} rounded-md shadow-lg p-6 backdrop-blur-md hover:scale-105 hover:backdrop-contrast-115"
+  class="{orderClass} rounded-2xl shadow-lg p-6 backdrop-blur-md hover:scale-105 hover:backdrop-contrast-115"
 >
   <h3 class="mb-2">{title}</h3>
   <ul class="flex flex-wrap gap-2 mb-4 list-inside">

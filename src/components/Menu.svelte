@@ -12,7 +12,7 @@
   aria-expanded={isExpanded}
   {onclick}
   aria-controls="main-menu"
-  class="menu md:hidden m-5 mt-2 p-2 active:border-2 active:rounded-xl"
+  class="menu md:hidden md:m-5 m-3 mt-2 p-2 active:border-2 active:rounded-xl"
   aria-label="menu">
   <img alt="menu icon" class="h-9" src={menuIcon.src} />
 </button> 
