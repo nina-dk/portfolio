@@ -1,46 +1,90 @@
-# Astro Starter Kit: Basics
+# Portfolio Website
 
-```sh
-npm create astro@latest -- --template basics
+## 🇬🇧 English
+
+### Description
+This project is a personal portfolio website built to showcase my work, skills, and projects.  
+It is developed using **Astro** with **Svelte components**, **MDX content**, and **Tailwind CSS** for styling.
+
+The site is:
+- Responsive
+- SEO-friendly
+- Bilingual (English / Greek)
+- Focused on performance, accessibility, and clean UI/UX
+
+---
+
+### Tech Stack
+- Astro
+- Svelte
+- TypeScript
+- Tailwind CSS
+- MDX (for content)
+
+---
+
+### Getting Started
+
+#### Prerequisites
+- Node.js (v22 or newer recommended)
+- npm or pnpm
+
+#### Installation
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+Development
+```bash
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The site will be available at:
+http://localhost:4321
 
-## 🧞 Commands
+Build for production
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Preview production build
 
-## 👀 Want to learn more?
+```bash
+npm run preview
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Project Structure (simplified)
+
+```bash
+src/
+  components/      # Reusable Svelte components
+  content/         # MD / MDX content (EN & EL)
+  layouts/         # Page layouts
+  pages/           # Astro pages
+  assets/          # Images & videos
+  scripts/         # JS scripts
+  styles/          # Global CSS styles
+```
+
+---
+
+### Notes
+
+This project was created as part of a technical assignment and focuses on clean architecture, performance, and maintainability.
+
+---
+
+## 🇬🇷 Ελληνικά
+
+### Περιγραφή
+
+Αυτό το project είναι ένα προσωπικό portfolio website με σκοπό την παρουσίαση των έργων, των δεξιοτήτων και της επαγγελματικής μου πορείας.
+Έχει υλοποιηθεί με Astro, Svelte components, MDX για το περιεχόμενο και Tailwind CSS για το styling.
+
+Το site είναι:
+
+- Responsive
+- SEO friendly
+- Δίγλωσσο (Αγγλικά / Ελληνικά)
+- Εστιασμένο στην απόδοση, την προσβασιμότητα και το καθαρό UI/UX

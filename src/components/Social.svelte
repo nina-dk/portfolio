@@ -1,9 +1,16 @@
 <script>
-const { platform, username } = $props();
+  import ghIcon from '../assets/github_icon.png';
+  import linkedinIcon from '../assets/linkedin_icon.png';
+
+  const { platform, username } = $props();
 </script>
 
 <a class="self-center" href={`https://www.${platform}.com/${username}`}>
-  <img class="w-8" alt="{platform} icon" src="/{platform}_icon.png" />
+  <img
+    class="w-8"
+    alt="{platform} icon"
+    src={platform === 'github' ? ghIcon.src : linkedinIcon.src}
+  />
 </a>
 
 <style>

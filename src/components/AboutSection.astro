@@ -1,14 +1,20 @@
 ---
 import { getCollection, render } from 'astro:content';
 import InfoCard from './InfoCard.svelte';
-import ContactLink from './ContactLink.svelte';
 
-const sections = await getCollection('enBio');
+interface Props {
+  lang: 'en' | 'el';
+}
+
+const { lang }: Props = Astro.props;
+const collectionName = (lang + 'Bio') as 'enBio' | 'elBio';
+
+const sections = await getCollection(collectionName);
 const renderedSections = await Promise.all(sections.map(s => render(s)));
 ---
 
-<h2>About me</h2>
-<div class="grid gap-6 lg:grid-cols-3">
+<h2 class="mt-12 md:text-4xl text-3xl">About me</h2>
+<div id="about" class="grid gap-6 lg:grid-cols-3 pr-6 pl-6 pt-3 pb-3">
   {
     renderedSections.map(({ remarkPluginFrontmatter, Content }) => (
       <InfoCard title={remarkPluginFrontmatter.title}>
@@ -16,10 +22,12 @@ const renderedSections = await Promise.all(sections.map(s => render(s)));
       </InfoCard>
     ))
   }
-  <div class="md:row-start-2 md:col-start-2 md:text-center md:self-center lg:text-start mt-6 text-end">
+  <div
+    class="md:row-start-2 md:col-start-2 text-center md:self-center lg:mt-15 mt-6 hover:animate-wiggle"
+  >
     <a
       href="#contact"
-      class="border-2 rounded-lg pl-6 pr-6 pt-3 pb-3 no-underline transition delay-90 ease-in-out hover:backdrop-contrast-115"
+      class="rounded-md shadow-xl pl-9 pr-9 pt-3 pb-3 no-underline bg-purple-200 animate-purple-gradient active:border-3 border-purple-900"
       >Let's talk!</a
     >
   </div>

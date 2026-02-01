@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/global.css';
-import type { MarkdownInstance } from 'astro';
+import type { MDXInstance } from 'astro';
 
 interface PageFrontmatter {
   title: string;
@@ -10,17 +10,13 @@ interface PageFrontmatter {
 
 const { frontmatter, Content } = Object.values(
   import.meta.glob('../../content/el/home.mdx', { eager: true }),
-)[0] as MarkdownInstance<PageFrontmatter>;
+)[0] as MDXInstance<PageFrontmatter>;
 ---
 
-<BaseLayout
-  title="Αντωνίνα Καλλιντέρη"
-  lang="el"
-  description={frontmatter.title}
->
+<BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={frontmatter.title}>
   <section class="prose max-w-full m-2">
-    <h2>{frontmatter.title}</h2>
-    <h2>{frontmatter.description}</h2>
+    <h1 class="md:text-6xl">{frontmatter.title}</h1>
+    <h2 class="md:text-3xl font-normal">{frontmatter.description}</h2>
     <Content />
   </section>
 </BaseLayout>

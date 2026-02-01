@@ -7,7 +7,7 @@ const { lang, title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@ const { lang, title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="font-mono">
+  <body class="font-mono bg-[url('../assets/background.svg')] bg-cover p-6">
     <Header client:only lang={lang} />
     <slot />
     <Footer />
