@@ -13,6 +13,15 @@ const sections = await getCollection(collectionName);
 const renderedSections = await Promise.all(sections.map(s => render(s)));
 ---
 
+<!-- <div
+  class="md:row-start-2 md:col-start-2 text-center md:self-center lg:mt-15 mt-6 hover:animate-wiggle"
+>
+  <a
+    href="#contact"
+    class="rounded-md shadow-xl pl-9 pr-9 pt-3 pb-3 no-underline bg-purple-200 animate-purple-gradient active:border-3 border-purple-900"
+    >Let's talk!</a
+  >
+</div> -->
 <h2 class="mt-12 md:text-4xl text-3xl">About me</h2>
 <div id="about" class="grid gap-6 lg:grid-cols-3 pr-6 pl-6 pt-3 pb-3">
   {
@@ -22,13 +31,4 @@ const renderedSections = await Promise.all(sections.map(s => render(s)));
       </InfoCard>
     ))
   }
-  <div
-    class="md:row-start-2 md:col-start-2 text-center md:self-center lg:mt-15 mt-6 hover:animate-wiggle"
-  >
-    <a
-      href="#contact"
-      class="rounded-md shadow-xl pl-9 pr-9 pt-3 pb-3 no-underline bg-purple-200 animate-purple-gradient active:border-3 border-purple-900"
-      >Let's talk!</a
-    >
-  </div>
 </div>
