@@ -16,7 +16,18 @@ const { frontmatter, Content } = Object.values(
 <BaseLayout title="Αντωνίνα Καλλιντέρη" lang="el" description={frontmatter.title}>
   <section class="prose max-w-full m-2">
     <h1 class="md:text-6xl">{frontmatter.title}</h1>
-    <h2 class="md:text-3xl font-normal">{frontmatter.description}</h2>
+    <div class="flex flex-wrap items-center md:mt-6 gap-7 pr-6 pl-6 pt-3 pb-3">
+      <h2 class="md:text-3xl font-normal md:flex-3">
+        {frontmatter.description}
+      </h2>
+      <div class="md:flex-2 mt-7 ml-auto md:ml-0 text-center hover:animate-wiggle">
+        <a
+          href="#contact"
+          class="rounded-md shadow-xl pl-8 pr-8 pt-3 pb-3 md:pl-15 md:pr-15 md:pt-7 md:pb-7 no-underline bg-purple-200 animate-purple-gradient active:border-6 border-purple-900"
+          >Let's talk!</a
+        >
+      </div>
+    </div>
     <Content />
   </section>
 </BaseLayout>
